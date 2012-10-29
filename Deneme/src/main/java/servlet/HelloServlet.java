@@ -3,30 +3,35 @@ package servlet;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(
-        name = "MyServlet", 
-        urlPatterns = {"/hello"}
-    )
-public class HelloServlet extends HttpServlet {
+@WebServlet(name = "MyServlet", urlPatterns = {"/hello"})
 
-    /**
+public class HelloServlet extends HttpServlet {
+	
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	
+	public HelloServlet() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	@Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        ServletOutputStream out = resp.getOutputStream();
-        out.write("hello heroku! i am gceylan".getBytes());
-        out.flush();
-        out.close();
-    }
-    
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		resp.getWriter().println("Hello Servlet!");
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		super.doPost(req, resp);
+	}
 }
