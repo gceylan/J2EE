@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<title>My Form</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="span12">
+        		<h2>Form Example</h2>
+                <hr>
+        		<form class="form-horizontal offset3" id="myForm" method="post" action="./show-form-result">
+                  <fieldset>
+                    <div class="control-group">
+                        <label class="control-label">First Name</label>
+                        <div class="controls">
+                            <input name="firstName" maxlength="100" placeholder="Enter your first name..." type="text" class="input-large" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Last Name</label>
+                        <div class="controls">
+                            <input name="lastName" maxlength="100" placeholder="Enter your last name..." type="text" class="input-large" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Email</label>
+                        <div class="controls">
+                            <input name="email" maxlength="100" placeholder="Enter your email..." type="text" class="input-large" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Password</label>
+                        <div class="controls">
+                            <input name="password" maxlength="100" placeholder="Enter your password..." type="password" class="input-large" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                    	<div class="controls">
+      						<button type="submit" class="btn">Submit</button>
+    					</div>
+    				</div>
+                  </fieldset>
+            	</form>
+        </div>
+    </div>
+</div>
+
+<footer>
+	<div class="container">
+		<hr>
+		<p class="pull-right"><a href="/ServletApp"><i class="icon-arrow-left"></i> Back to top</a></p>
+		<ul>
+          <li><a href="/ServletApps/"><i class="icon-home"></i> Home</a></li>
+        </ul>
+	</div>
+</footer>
+
+</body>
+</html>
