@@ -14,4 +14,24 @@
     <servlet-name>FormServlet</servlet-name>
     <url-pattern>/show-form-result</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ShowRequestHeaders</display-name>
+    <servlet-name>ShowRequestHeaders</servlet-name>
+    <servlet-class>coreservlet.ShowRequestHeaders</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowRequestHeaders</servlet-name>
+    <url-pattern>/show-request-headers</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LongServlet</display-name>
+    <servlet-name>LongServlet</servlet-name>
+    <servlet-class>coreservlet.LongServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LongServlet</servlet-name>
+    <url-pattern>/long-servlet</url-pattern>
+  </servlet-mapping>
 </web-app>
