@@ -39,7 +39,6 @@ public class ShowRequestHeaders extends HttpServlet {
 		
 		out.println("<p>method: <b>" + request.getMethod() + "</b></p>\n");
 		out.println("<p>request URI: <b>" + request.getRequestURI() + "</b></p>\n");
-		out.println("<p>query string: <b>" + request.getQueryString() + "</b></p>\n");
 		out.println("<p>protocol: <b>" + request.getProtocol() + "</b></p>\n");
 
 		out.println("<table class=\"table table-hover\">");

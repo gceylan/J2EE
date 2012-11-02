@@ -68,8 +68,10 @@ public class FormServlet extends HttpServlet {
 		
 		out.println("</table>");
 		
-		out.println(ServletUtilities.closeMainDiv());
+		String refering = request.getHeader("referer");
+		out.println("<p>Referring page: <b><i>" + refering + "</i></b></p>");
 		
+		out.println(ServletUtilities.closeMainDiv());
 		out.println(ServletUtilities.getFooter("./form.html"));
 	}
 
