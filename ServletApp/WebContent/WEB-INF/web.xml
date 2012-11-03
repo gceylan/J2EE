@@ -44,4 +44,14 @@
     <servlet-name>SubmitResume</servlet-name>
     <url-pattern>/submit-resume</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RedirectServlet</display-name>
+    <servlet-name>RedirectServlet</servlet-name>
+    <servlet-class>coreservlet.RedirectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RedirectServlet</servlet-name>
+    <url-pattern>/redirect-user</url-pattern>
+  </servlet-mapping>
 </web-app>
