@@ -34,4 +34,14 @@
     <servlet-name>LongServlet</servlet-name>
     <url-pattern>/long-servlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SubmitResume</display-name>
+    <servlet-name>SubmitResume</servlet-name>
+    <servlet-class>coreservlet.SubmitResume</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubmitResume</servlet-name>
+    <url-pattern>/submit-resume</url-pattern>
+  </servlet-mapping>
 </web-app>
