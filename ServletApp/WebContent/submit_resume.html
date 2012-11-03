@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Free Resume Posting</title>
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="span12">
+			<h2>hot-computer-jobs.com</h2>
+			<p>
+				To use our <i>free</i> resume-posting service, simply fill
+				out the brief summary of your skills below. Use "Preview"
+				to check the results, then press "Submit" once it is
+				ready. Your mini-resume will appear online within 24 hours.
+			</p>			
+			<hr>
+			<form class="form-horizontal" method="post" action="./submit-resume">
+    			<fieldset>
+    				<p><b>
+						First, give some general information about the look of
+						your resume:
+					</b></p>
+    				<div class="control-group">
+          				<label class="control-label" for="input01">Heading Font</label>
+          				<div class="controls">
+		            		<input type="text" name="headingFont" value="default" class="input-xlarge">
+          				</div>
+        			</div>
+    				<div class="control-group">
+          				<label class="control-label" for="input01">Text Color</label>
+          				<div class="controls">
+            				<input type="text" name="textColor" value="BLACK" class="input-xlarge">
+          				</div>
+        			</div>
+        			<div class="control-group">
+          				<label class="control-label" for="input01">Body Font</label>
+          				<div class="controls">
+            				<input type="text" name="bodyFont" value="default" class="input-xlarge">
+          				</div>
+        			</div>
+        			<div class="control-group">
+          				<label class="control-label" for="input01">Body Text Size</label>
+          				<div class="controls">
+            				<input type="text" name="bodySize" value=18 class="input-xlarge">
+          				</div>
+        			</div>
+        			<div class="control-group">
+          				<label class="control-label" for="input01">Foreground Color</label>
+          				<div class="controls">
+            				<input type="text" name="fgColor" value="BLACK" class="input-xlarge">
+          				</div>
+        			</div>
+        			<div class="control-group">
+          				<label class="control-label" for="input01">Background Color</label>
+          				<div class="controls">
+            				<input type="text" name="bgColor" value="WHITE" class="input-xlarge">
+          				</div>
+        			</div>
+        			<p><b>Next, give some general information about yourself:</b></p>
+        			<div class="control-group">
+          				<label class="control-label" for="input01">Name</label>
+          				<div class="controls">
+            				<input type="text" name="name" class="input-xlarge">
+          				</div>
+        			</div>
+        			<div class="control-group">
+          				<label class="control-label" for="input01">Title</label>
+          				<div class="controls">
+            				<input type="text" name="title" class="input-xlarge">
+          				</div>
+        			</div>
+        			<div class="control-group">
+          				<label class="control-label" for="input01">Email Address</label>
+          				<div class="controls">
+            				<input type="text" name="email" class="input-xlarge">
+          				</div>
+        			</div>
+        			<div class="control-group">
+          				<label class="control-label" for="input01">Programming Language</label>
+          				<div class="controls">
+            				<input type="text" name="languages" class="input-xlarge">
+          				</div>
+        			</div>
+        			<p><b>
+        				Finally, enter a brief summary of your skills and
+						experience:</b> (use &lt;p&gt; to separate paragraphs.
+						Other HTML markup is also permitted.)
+					</p>
+					<div class="control-group">
+          				<label class="control-label">Some Skills</label>
+          				<div class="controls">
+            				<div class="textarea">
+                  				<textarea rows=10 wrap="soft" name="skills"></textarea>
+            				</div>
+          				</div>
+        			</div>
+        			<div class="control-group">
+          				<div class="controls">
+            				<button class="btn" name="previewButton">Preview</button>
+            				<button class="btn btn-success" name="submitButton">Submit</button>
+          				</div>
+        			</div>
+    			</fieldset>
+  			</form>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="container">
+		<hr>
+		<p class="pull-right"><a href="/ServletApps"><i class="icon-arrow-left"></i> Back to top</a></p>
+		<ul>
+          <li><a href="/ServletApps/"><i class="icon-home"></i> Home</a></li>
+        </ul>
+	</div>
+</footer>
+
+</body>
+</html>
