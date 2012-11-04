@@ -54,4 +54,14 @@
     <servlet-name>RedirectServlet</servlet-name>
     <url-pattern>/redirect-user</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BrowserInsult</display-name>
+    <servlet-name>BrowserInsult</servlet-name>
+    <servlet-class>coreservlet.BrowserInsult</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BrowserInsult</servlet-name>
+    <url-pattern>/browser-insult</url-pattern>
+  </servlet-mapping>
 </web-app>
