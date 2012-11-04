@@ -10,4 +10,18 @@ public class SearchUtilities {
 	public static SearchSpec[] getCommonSpecs() {
 		return commonSpecs;
 	}
+	
+	public static String makeURL(String searchEngineName, String searchString) {
+		SearchSpec[] searchSpecs = getCommonSpecs();
+		String searchURL = null;
+		
+		for (SearchSpec searchSpec : searchSpecs) {
+			if (searchSpec.getName().equalsIgnoreCase(searchEngineName)) {
+				searchURL = searchSpec.makeURL(searchString);
+				break;
+			}
+		}
+		
+		return searchURL;
+	}
 }
