@@ -38,5 +38,19 @@ public class ServletUtilities {
 		
 		return sb.toString();
 	}
+	
+	public static String openForm(String method, String action) {
+		StringBuffer sb = new StringBuffer();
+		
+		sb.append("<center><form").append(" action = \"");
+		sb.append(action).append("\"").append(" method = \"").append(method);
+		sb.append("\">");
+		
+		return sb.toString();
+	}
+	
+	public static String closeForm() {
+		return "</center></form>";
+	}
 
 }
