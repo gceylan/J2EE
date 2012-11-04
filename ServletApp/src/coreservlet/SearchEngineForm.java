@@ -35,7 +35,7 @@ public class SearchEngineForm extends HttpServlet {
 		out.println(ServletUtilities.openMainDiv(title));
 		out.println(ServletUtilities.openForm("post", "./search-engine"));
 		
-		out.println("<p>Search keywords: <input type=\"text\" name=\"seachString\"></p>");
+		out.println("<p>Search keywords: <input type=\"text\" name=\"searchString\"></p>");
 		
 		SearchSpec[] searchSpecs = SearchUtilities.getCommonSpecs();
 		for (SearchSpec searchSpec : searchSpecs) {

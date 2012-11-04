@@ -64,4 +64,24 @@
     <servlet-name>BrowserInsult</servlet-name>
     <url-pattern>/browser-insult</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchEngineForm</display-name>
+    <servlet-name>SearchEngineForm</servlet-name>
+    <servlet-class>coreservlet.SearchEngineForm</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchEngineForm</servlet-name>
+    <url-pattern>/search-engine-form</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchEngine</display-name>
+    <servlet-name>SearchEngine</servlet-name>
+    <servlet-class>coreservlet.SearchEngine</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchEngine</servlet-name>
+    <url-pattern>/search-engine</url-pattern>
+  </servlet-mapping>
 </web-app>
