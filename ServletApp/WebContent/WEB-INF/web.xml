@@ -84,4 +84,14 @@
     <servlet-name>SearchEngine</servlet-name>
     <url-pattern>/search-engine</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ExcelServlet</display-name>
+    <servlet-name>ExcelServlet</servlet-name>
+    <servlet-class>coreservlet.ExcelServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExcelServlet</servlet-name>
+    <url-pattern>/excel-servlet</url-pattern>
+  </servlet-mapping>
 </web-app>
