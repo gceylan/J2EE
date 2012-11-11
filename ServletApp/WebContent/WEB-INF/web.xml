@@ -94,4 +94,14 @@
     <servlet-name>ExcelServlet</servlet-name>
     <url-pattern>/excel-servlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ShadowedText</display-name>
+    <servlet-name>ShadowedText</servlet-name>
+    <servlet-class>coreservlet.ShadowedText</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShadowedText</servlet-name>
+    <url-pattern>/show-shadowed-text</url-pattern>
+  </servlet-mapping>
 </web-app>
