@@ -88,7 +88,7 @@
     <description></description>
     <display-name>ExcelServlet</display-name>
     <servlet-name>ExcelServlet</servlet-name>
-    <servlet-class>coreservlet.ExcelServlet</servlet-class>
+    <servlet-class>coreservlet.shadowedtext.ExcelServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ExcelServlet</servlet-name>
@@ -98,10 +98,40 @@
     <description></description>
     <display-name>ShadowedText</display-name>
     <servlet-name>ShadowedText</servlet-name>
-    <servlet-class>coreservlet.ShadowedText</servlet-class>
+    <servlet-class>coreservlet.shadowedtext.ShadowedText</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ShadowedText</servlet-name>
     <url-pattern>/show-shadowed-text</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CookieServlet</display-name>
+    <servlet-name>CookieServlet</servlet-name>
+    <servlet-class>coreservlet.cookies.CookieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CookieServlet</servlet-name>
+    <url-pattern>/cookie-servlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ClientAccessCounts</display-name>
+    <servlet-name>ClientAccessCounts</servlet-name>
+    <servlet-class>coreservlet.cookies.ClientAccessCounts</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ClientAccessCounts</servlet-name>
+    <url-pattern>/client-access-counts</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>VisitNumber</display-name>
+    <servlet-name>VisitNumber</servlet-name>
+    <servlet-class>coreservlet.cookies.VisitNumber</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VisitNumber</servlet-name>
+    <url-pattern>/visit-number</url-pattern>
   </servlet-mapping>
 </web-app>
