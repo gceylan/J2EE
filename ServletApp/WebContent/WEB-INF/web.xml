@@ -154,4 +154,14 @@
     <servlet-name>RegistrationForm</servlet-name>
     <url-pattern>/registration-form</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ShowSession</display-name>
+    <servlet-name>ShowSession</servlet-name>
+    <servlet-class>coreservlet.sessiontracking.ShowSession</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowSession</servlet-name>
+    <url-pattern>/show-session</url-pattern>
+  </servlet-mapping>
 </web-app>
