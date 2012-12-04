@@ -1,9 +1,5 @@
 package coreservlet.cookies;
 
-import java.io.IOException;
-
-import javax.servlet.http.HttpServletResponse;
-
 public class ServletUtilities {
 	
 	public static String getHeadWithCss(String title) {

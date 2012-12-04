@@ -1,23 +1,26 @@
-package coreservlet;
+package coreservlet.requestheaders;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import coreservlet.ServletUtilities;
+
 /**
- * Servlet implementation class BrowserInsult
+ * Servlet implementation class ShowRequestHeaders
  */
-public class BrowserInsult extends HttpServlet {
+public class ShowRequestHeaders extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BrowserInsult() {
+    public ShowRequestHeaders() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,38 +32,36 @@ public class BrowserInsult extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		
-		String title = null;
-		String message = null;
-		String userAgent = request.getHeader("User-Agent").toLowerCase();
-		
-		if (userAgent != null) {
-			if (userAgent.contains("chromium")) {
-				title = "Chromium";
-				message = "Welcome to Chromium";
-			} else if (userAgent.contains("chrome")) {
-				title = "Chrome";
-				message = "Welcome to Chrome";
-			} else if (userAgent.contains("firefox")) {
-				title = "Mozilla Firefox";
-				message = "Welcome to Firefox";
-			} else if (userAgent.contains("MSIE")) {
-				title = "Microsoft IE";
-				message = "Welcome to Microsoft IE";
-			}
-		} else {
-			title = "No Value";
-			message = "User-Agent: " + userAgent;
-		}
+		String title = "Showing Request Headers";
 		
 		out.println(ServletUtilities.getHeadWithCss(title));
 		out.println(ServletUtilities.openMainDiv(title));
 		
-		out.println("<p class=\"center\">" + message + "</p>");
-		out.println("<p class=\"center\"> (User Agent Inf: " + userAgent + ")</p>");
+		out.println("<hr>");
 		
+		out.println("<p>method: <b>" + request.getMethod() + "</b></p>\n");
+		out.println("<p>request URI: <b>" + request.getRequestURI() + "</b></p>\n");
+		out.println("<p>protocol: <b>" + request.getProtocol() + "</b></p>\n");
+
+		out.println("<table class=\"table table-hover\">");
+		out.println("<tr><th>#</th><th>Header Name</th><th>Header Value</th></tr>");
+		
+		Enumeration<String> requestHeaders = request.getHeaderNames();
+		int i = 1;
+		
+		while(requestHeaders.hasMoreElements()) {
+			String headerName = requestHeaders.nextElement();
+			
+			out.println("<tr>");
+			
+			out.print("<td>" + i++ + "</td><td>" + headerName + "</td><td>" + request.getHeader(headerName) + "</td>");
+			
+			out.println("</tr>");
+		}
+		
+		out.println("</table>");
 		out.println(ServletUtilities.closeMainDiv());
 		out.println(ServletUtilities.getFooter("./home.html"));
-		
 	}
 
 	/**

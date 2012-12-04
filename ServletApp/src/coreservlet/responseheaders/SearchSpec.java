@@ -1,4 +1,4 @@
-package coreservlet;
+package coreservlet.responseheaders;
 
 public class SearchSpec {
 	

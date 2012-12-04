@@ -1,4 +1,4 @@
-package coreservlet.shadowedtext;
+package coreservlet.mimetypes;
 
 import java.awt.Color;
 import java.awt.Font;

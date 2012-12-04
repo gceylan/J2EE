@@ -1,4 +1,4 @@
-package coreservlet;
+package coreservlet.requestheaders;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,16 +8,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import coreservlet.ServletUtilities;
+
 /**
- * Servlet implementation class SearchEngineForm
+ * Servlet implementation class BrowserInsult
  */
-public class SearchEngineForm extends HttpServlet {
+public class BrowserInsult extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SearchEngineForm() {
+    public BrowserInsult() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,31 +28,41 @@ public class SearchEngineForm extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		
-		PrintWriter out = response.getWriter();
-		String title = "Web Search Engine";
+		String title = null;
+		String message = null;
+		String userAgent = request.getHeader("User-Agent").toLowerCase();
+		
+		if (userAgent != null) {
+			if (userAgent.contains("chromium")) {
+				title = "Chromium";
+				message = "Welcome to Chromium";
+			} else if (userAgent.contains("chrome")) {
+				title = "Chrome";
+				message = "Welcome to Chrome";
+			} else if (userAgent.contains("firefox")) {
+				title = "Mozilla Firefox";
+				message = "Welcome to Firefox";
+			} else if (userAgent.contains("MSIE")) {
+				title = "Microsoft IE";
+				message = "Welcome to Microsoft IE";
+			}
+		} else {
+			title = "No Value";
+			message = "User-Agent: " + userAgent;
+		}
 		
 		out.println(ServletUtilities.getHeadWithCss(title));
 		out.println(ServletUtilities.openMainDiv(title));
-		out.println(ServletUtilities.openForm("post", "./search-engine"));
 		
-		out.println("<p>Search keywords: <input type=\"text\" name=\"searchString\"></p>");
+		out.println("<p class=\"center\">" + message + "</p>");
+		out.println("<p class=\"center\"> (User Agent Inf: " + userAgent + ")</p>");
 		
-		SearchSpec[] searchSpecs = SearchUtilities.getCommonSpecs();
-		for (SearchSpec searchSpec : searchSpecs) {
-			out.println("<input type=\"radio\" " +
-								"name = \"searchEngine\" " +
-								"value = \"" + searchSpec.getName() + "\">"
-			);
-			out.println(searchSpec.getName() + "<br>");
-		}
-		
-		out.println("<p><br><input type=\"submit\" value=\"Search\" class=\"btn\"></p>");
-		
-		out.println(ServletUtilities.closeForm());
 		out.println(ServletUtilities.closeMainDiv());
 		out.println(ServletUtilities.getFooter("./home.html"));
+		
 	}
 
 	/**

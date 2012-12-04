@@ -1,7 +1,6 @@
-package coreservlet.shadowedtext;
+package coreservlet.responseheaders;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,15 +8,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ExcelServlet
+ * Servlet implementation class RedirectServlet
  */
-public class ExcelServlet extends HttpServlet {
+public class RedirectServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ExcelServlet() {
+    public RedirectServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,13 +25,16 @@ public class ExcelServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("application/vnd.ms-excel");
-		PrintWriter out = response.getWriter();
+		response.setContentType("text/html");
 		
-		out.println("\tQ1\tQ2\tQ3\tQ4\tTotal");
-		out.println("Apples\t78\t87\t92\t29\t=SUM(B2:E2)");
-		out.println("Oranges\t77\t86\t93\t30\t=SUM(B3:E3)");
-
+		String userAgent = request.getHeader("User-Agent").toLowerCase();
+		
+		if (userAgent.contains("iphone") || userAgent.contains("android") ||
+				userAgent.contains("blackberry") || userAgent.contains("ipod")) {
+			response.sendRedirect("http://m.vw.com.tr/");
+		} else {
+			response.sendRedirect("http://www.vw.com.tr/");
+		}
 	}
 
 	/**

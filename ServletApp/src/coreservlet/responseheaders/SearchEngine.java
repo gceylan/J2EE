@@ -1,4 +1,4 @@
-package coreservlet;
+package coreservlet.responseheaders;
 
 import java.io.IOException;
 import java.net.URLEncoder;

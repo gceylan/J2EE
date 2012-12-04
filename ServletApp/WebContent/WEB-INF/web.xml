@@ -18,7 +18,7 @@
     <description></description>
     <display-name>ShowRequestHeaders</display-name>
     <servlet-name>ShowRequestHeaders</servlet-name>
-    <servlet-class>coreservlet.ShowRequestHeaders</servlet-class>
+    <servlet-class>coreservlet.requestheaders.ShowRequestHeaders</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ShowRequestHeaders</servlet-name>
@@ -48,7 +48,7 @@
     <description></description>
     <display-name>RedirectServlet</display-name>
     <servlet-name>RedirectServlet</servlet-name>
-    <servlet-class>coreservlet.RedirectServlet</servlet-class>
+    <servlet-class>coreservlet.responseheaders.RedirectServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>RedirectServlet</servlet-name>
@@ -58,7 +58,7 @@
     <description></description>
     <display-name>BrowserInsult</display-name>
     <servlet-name>BrowserInsult</servlet-name>
-    <servlet-class>coreservlet.BrowserInsult</servlet-class>
+    <servlet-class>coreservlet.requestheaders.BrowserInsult</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>BrowserInsult</servlet-name>
@@ -68,7 +68,7 @@
     <description></description>
     <display-name>SearchEngineForm</display-name>
     <servlet-name>SearchEngineForm</servlet-name>
-    <servlet-class>coreservlet.SearchEngineForm</servlet-class>
+    <servlet-class>coreservlet.responseheaders.SearchEngineForm</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>SearchEngineForm</servlet-name>
@@ -78,7 +78,7 @@
     <description></description>
     <display-name>SearchEngine</display-name>
     <servlet-name>SearchEngine</servlet-name>
-    <servlet-class>coreservlet.SearchEngine</servlet-class>
+    <servlet-class>coreservlet.responseheaders.SearchEngine</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>SearchEngine</servlet-name>
@@ -88,7 +88,7 @@
     <description></description>
     <display-name>ExcelServlet</display-name>
     <servlet-name>ExcelServlet</servlet-name>
-    <servlet-class>coreservlet.shadowedtext.ExcelServlet</servlet-class>
+    <servlet-class>coreservlet.mimetypes.ExcelServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ExcelServlet</servlet-name>
@@ -98,7 +98,7 @@
     <description></description>
     <display-name>ShadowedText</display-name>
     <servlet-name>ShadowedText</servlet-name>
-    <servlet-class>coreservlet.shadowedtext.ShadowedText</servlet-class>
+    <servlet-class>coreservlet.mimetypes.ShadowedText</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ShadowedText</servlet-name>
@@ -133,5 +133,25 @@
   <servlet-mapping>
     <servlet-name>VisitNumber</servlet-name>
     <url-pattern>/visit-number</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegistrationServlet</display-name>
+    <servlet-name>RegistrationServlet</servlet-name>
+    <servlet-class>coreservlet.cookies.RegistrationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegistrationServlet</servlet-name>
+    <url-pattern>/registration-servlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegistrationForm</display-name>
+    <servlet-name>RegistrationForm</servlet-name>
+    <servlet-class>coreservlet.cookies.RegistrationForm</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegistrationForm</servlet-name>
+    <url-pattern>/registration-form</url-pattern>
   </servlet-mapping>
 </web-app>

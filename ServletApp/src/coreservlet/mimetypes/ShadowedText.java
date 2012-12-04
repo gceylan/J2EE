@@ -1,4 +1,4 @@
-package coreservlet.shadowedtext;
+package coreservlet.mimetypes;
 
 import java.io.IOException;
 import java.io.PrintWriter;
