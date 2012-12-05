@@ -164,4 +164,14 @@
     <servlet-name>ShowSession</servlet-name>
     <url-pattern>/show-session</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ShowItems</display-name>
+    <servlet-name>ShowItems</servlet-name>
+    <servlet-class>coreservlet.sessiontracking.ShowItems</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowItems</servlet-name>
+    <url-pattern>/show-items</url-pattern>
+  </servlet-mapping>
 </web-app>
